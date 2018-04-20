@@ -35,7 +35,7 @@ export class SignupPage {
     })
 
     this.showBannerAd();
-    this.showIntersitialAd();
+    this.showInterstitialAd();
   }
 
   doSignup() {
@@ -60,7 +60,7 @@ export class SignupPage {
     try {
 
       const bannerConfig: AdMobFreeBannerConfig ={
-        //id: 'ca-pub-XXXXXXXXXXXXX',
+        // id: 'ca-app-pub-3000506446152743~6939471468',
         isTesting: true,
         autoShow: true
       }
@@ -75,9 +75,10 @@ export class SignupPage {
     }
   }
 
-  async showIntersitialAd(){
+  async showInterstitialAd(){
     try{
       const interstitialConfig: AdMobFreeInterstitialConfig = {
+        // id: 'ca-app-pub-3000506446152743~6939471468',
         isTesting: true,
         autoShow: true
       }
@@ -85,6 +86,7 @@ export class SignupPage {
       this.adMobFree.interstitial.config(interstitialConfig);
 
       const result = await this.adMobFree.interstitial.prepare();
+      console.log(result);
     }
     catch(e) {
 
