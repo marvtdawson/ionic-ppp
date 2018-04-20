@@ -34,7 +34,7 @@ export class TutorialPage {
           {
             title: values.TUTORIAL_SLIDE1_TITLE,
             description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-1.png',
+            image: 'assets/img/smile.png',
           },
           {
             title: values.TUTORIAL_SLIDE2_TITLE,
@@ -44,7 +44,7 @@ export class TutorialPage {
           {
             title: values.TUTORIAL_SLIDE3_TITLE,
             description: values.TUTORIAL_SLIDE3_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-3.png',
+            image: 'assets/img/ppv_1.jpg',
           }
         ];
       });
