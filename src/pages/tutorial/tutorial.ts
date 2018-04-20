@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, MenuController, NavController, Platform } from 'ionic-angular';
+import { AlertController, IonicPage, MenuController, NavController, Platform } from 'ionic-angular';
+import { LoadingController } from "ionic-angular";
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -18,8 +19,14 @@ export class TutorialPage {
   slides: Slide[];
   showSkip = true;
   dir: string = 'ltr';
+  loader: any;
 
-  constructor(public navCtrl: NavController, public menu: MenuController, translate: TranslateService, public platform: Platform) {
+
+  constructor(public navCtrl: NavController,
+              public menu: MenuController, translate: TranslateService,
+              public platform: Platform,
+              public loadCtrl: LoadingController,
+              public alertCtrl: AlertController) {
     this.dir = platform.dir();
     translate.get(["TUTORIAL_SLIDE1_TITLE",
       "TUTORIAL_SLIDE1_DESCRIPTION",
@@ -51,10 +58,35 @@ export class TutorialPage {
   }
 
   startApp() {
-    this.navCtrl.setRoot('WelcomePage', {}, {
+    /*this.navCtrl.setRoot('WelcomePage', {}, {
       animate: true,
       direction: 'forward'
     });
+*/
+    let alert = this.alertCtrl.create({
+      title: "How old are you?",
+      message: "This site contain nude images, video, adult scene and language.  Are you 18 years old?",
+      buttons: [
+        {
+          text: 'Yes',
+          handler: () => {
+            this.navCtrl.setRoot('WelcomePage', {}, {
+              animate: true,
+              direction: 'forward'
+            });
+          }
+        },
+        {
+          text: 'No',
+          handler: () => {
+            this.navCtrl.setRoot('TutorialPage', {}, {
+              animate: true,
+              direction: 'forward'
+            });
+          }
+        }
+      ]
+      }).present();
   }
 
   onSlideChangeStart(slider) {

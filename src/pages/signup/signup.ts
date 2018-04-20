@@ -4,6 +4,7 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
 import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
+import {AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from "@ionic-native/admob-free";
 
 @IonicPage()
 @Component({
@@ -26,11 +27,15 @@ export class SignupPage {
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    private adMobFree: AdMobFree) {
 
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
     })
+
+    this.showBannerAd();
+    this.showIntersitialAd();
   }
 
   doSignup() {
@@ -49,5 +54,40 @@ export class SignupPage {
       });
       toast.present();
     });
+  }
+
+  async showBannerAd() {
+    try {
+
+      const bannerConfig: AdMobFreeBannerConfig ={
+        //id: 'ca-pub-XXXXXXXXXXXXX',
+        isTesting: true,
+        autoShow: true
+      }
+
+      this.adMobFree.banner.config(bannerConfig);
+
+      const result = await this.adMobFree.banner.prepare();
+      console.log(result);
+    }
+    catch (e){
+      console.error(e);
+    }
+  }
+
+  async showIntersitialAd(){
+    try{
+      const interstitialConfig: AdMobFreeInterstitialConfig = {
+        isTesting: true,
+        autoShow: true
+      }
+
+      this.adMobFree.interstitial.config(interstitialConfig);
+
+      const result = await this.adMobFree.interstitial.prepare();
+    }
+    catch(e) {
+
+    }
   }
 }
