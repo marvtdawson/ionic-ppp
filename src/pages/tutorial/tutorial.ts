@@ -20,6 +20,8 @@ export class TutorialPage {
   showSkip = true;
   dir: string = 'ltr';
   loader: any;
+  dob: number;
+  alert: any;
 
 
   constructor(public navCtrl: NavController,
@@ -58,12 +60,7 @@ export class TutorialPage {
   }
 
   startApp() {
-    /*this.navCtrl.setRoot('WelcomePage', {}, {
-      animate: true,
-      direction: 'forward'
-    });
-*/
-    let alert = this.alertCtrl.create({
+    const alert = this.alertCtrl.create({
       title: "How old are you?",
       message: "This site contain nude images, video, adult scene and language.  Are you 18 years old?",
       buttons: [
@@ -86,8 +83,21 @@ export class TutorialPage {
           }
         }
       ]
-      }).present();
+      });
+      alert.present();
   }
+
+  showDobForm() {
+
+    let checkAge = this.alertCtrl.create();
+    checkAge.setTitle('Date of Birth');
+    /*checkAge.addInput ({
+      type: 'checkbox',
+      label: 'DOB',
+      value: 12,
+    });*/
+  }
+
 
   onSlideChangeStart(slider) {
     this.showSkip = !slider.isEnd();
