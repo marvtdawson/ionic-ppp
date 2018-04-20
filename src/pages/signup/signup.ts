@@ -28,7 +28,8 @@ export class SignupPage {
     public user: User,
     public toastCtrl: ToastController,
     public translateService: TranslateService,
-    private adMobFree: AdMobFree) {
+    // private adMobFree: AdMobFree
+  ) {
 
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
