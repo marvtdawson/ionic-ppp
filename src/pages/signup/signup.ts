@@ -4,7 +4,7 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
 import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
-import {AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from "@ionic-native/admob-free";
+// import {AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from "@ionic-native/admob-free";
 
 @IonicPage()
 @Component({
@@ -34,8 +34,8 @@ export class SignupPage {
       this.signupErrorString = value;
     })
 
-    this.showBannerAd();
-    this.showInterstitialAd();
+   /* this.showBannerAd();
+    this.showInterstitialAd();*/
   }
 
   doSignup() {
@@ -56,7 +56,7 @@ export class SignupPage {
     });
   }
 
-  async showBannerAd() {
+ /* async showBannerAd() {
     try {
 
       const bannerConfig: AdMobFreeBannerConfig ={
@@ -73,9 +73,9 @@ export class SignupPage {
     catch (e){
       console.error(e);
     }
-  }
+  }*/
 
-  async showInterstitialAd(){
+ /* async showInterstitialAd(){
     try{
       const interstitialConfig: AdMobFreeInterstitialConfig = {
         // id: 'ca-app-pub-3000506446152743~6939471468',
@@ -91,5 +91,6 @@ export class SignupPage {
     catch(e) {
 
     }
-  }
+  }*/
+
 }
