@@ -26,7 +26,7 @@ import { Settings } from '../providers/providers';
   </ion-menu>
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
-export class MyApp {
+export class PPPApp {
   rootPage = FirstRunPage;
 
   @ViewChild(Nav) nav: Nav;

@@ -88,4 +88,6 @@
         <variable name="UPDATE_METHOD" value="background" />
     </plugin>
     <plugin name="com.paypal.cordova.mobilesdk" spec="^3.5.0" />
+    <plugin name="phonegap-plugin-push" spec="^2.2.2" />
+    <plugin name="phonegap-plugin-local-notification" spec="https://github.com/phonegap/phonegap-plugin-local-notification" />
 </widget>
