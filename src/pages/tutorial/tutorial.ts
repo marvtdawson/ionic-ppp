@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController, IonicPage, MenuController, NavController, Platform } from 'ionic-angular';
-import { LoadingController } from "ionic-angular";
+import { AlertController, LoadingController, IonicPage, MenuController, NavController, Platform } from 'ionic-angular';
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -25,7 +24,8 @@ export class TutorialPage {
 
 
   constructor(public navCtrl: NavController,
-              public menu: MenuController, translate: TranslateService,
+              public menu: MenuController,
+              public translate: TranslateService,
               public platform: Platform,
               public loadCtrl: LoadingController,
               public alertCtrl: AlertController) {

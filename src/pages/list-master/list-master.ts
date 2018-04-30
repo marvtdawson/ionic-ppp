@@ -12,7 +12,9 @@ import { Items } from '../../providers/providers';
 export class ListMasterPage {
   currentItems: Item[];
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController,
+              public items: Items,
+              public modalCtrl: ModalController) {
     this.currentItems = this.items.query();
   }
 
