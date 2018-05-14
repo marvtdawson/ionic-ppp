@@ -21,6 +21,7 @@ export class TutorialPage {
   loader: any;
   dob: number;
   alert: any;
+  under_construction = '../../assets/img/under_construction_banner.png';
 
 
   constructor(public navCtrl: NavController,
@@ -30,7 +31,7 @@ export class TutorialPage {
               public loadCtrl: LoadingController,
               public alertCtrl: AlertController) {
     this.dir = platform.dir();
-    translate.get(["TUTORIAL_SLIDE1_TITLE",
+    /*translate.get(["TUTORIAL_SLIDE1_TITLE",
       "TUTORIAL_SLIDE1_DESCRIPTION",
       "TUTORIAL_SLIDE2_TITLE",
       "TUTORIAL_SLIDE2_DESCRIPTION",
@@ -56,7 +57,7 @@ export class TutorialPage {
             image: 'assets/img/ppv_1.jpg',
           }
         ];
-      });
+      });*/
   }
 
   startApp() {

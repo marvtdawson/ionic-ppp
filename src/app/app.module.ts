@@ -15,6 +15,8 @@ import { Settings } from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { PPPApp } from './app.component';
+import { LoginPage } from "../pages/login/login";
+import {TutorialPage} from "../pages/tutorial/tutorial";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -39,7 +41,9 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    PPPApp
+    PPPApp,
+    LoginPage,
+    TutorialPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ export function provideSettings(storage: Storage) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    PPPApp
+    PPPApp,
+    LoginPage,
+    TutorialPage
   ],
   providers: [
     Api,

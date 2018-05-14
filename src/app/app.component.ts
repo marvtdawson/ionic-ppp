@@ -5,7 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 
 import { FirstRunPage } from '../pages/pages';
+import { LoginPage } from '../pages/login/login';
 import { Settings } from '../providers/providers';
+import {TutorialPage} from "../pages/tutorial/tutorial";
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -27,7 +29,7 @@ import { Settings } from '../providers/providers';
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class PPPApp {
-  rootPage = FirstRunPage;
+  rootPage = TutorialPage;
 
   @ViewChild(Nav) nav: Nav;
 
